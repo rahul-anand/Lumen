@@ -27,6 +27,8 @@ def df_transform(df_feat, mode=0):
 
 @ray.remote(num_cpus=1)
 class Rem(object):
+    # from lumen.dependencies import *
+
     def __init__(self, parameters):
 
         self.parameters = parameters

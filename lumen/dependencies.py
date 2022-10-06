@@ -354,46 +354,7 @@ def make_folder(new_svdir):
         os.makedirs(new_svdir)
 
 
-def start_ray():
 
-    # mem_bytes = virtual_memory().total
-    # object_store_memory = 8 * mem_bytes
-    # plasma_directory = "/tmp"
-    i = 1
-    # os.environ["RAY_LOG_TO_STDERR"] = "1"
-    if not ray.is_initialized():
-
-        # ray.init(
-        #      num_cpus=63,
-        #     #  object_store_memory=250*10**9
-        # )
-
-        ray.init(
-            address="auto",
-            # num_cpus=2,
-            # # ray.init(address='ray://<head_node_ip_address>:10001')
-            # include_dashboard=False,
-            # address="155.98.36.2:6379",
-            # address="ray://155.98.36.2:10001",
-            # address="auto",
-            # _redis_password="5241590000000000",
-            log_to_driver=True,
-            ignore_reinit_error=True,
-            #   huge_pages=True,
-            # plasma_directory="/tmp/hugepages"
-            # temp_dir="/data/ray/temp/",
-        )
-
-        # named_actors.register_actor("global_counter", Counter.remote())
-    # ray.worker.cleanup()
-
-
-def end_ray():
-    i = 1
-    # ray.shutdown()
-
-
-start_ray()
 # import modin.pandas as pd1
 import modin.experimental.pandas as pd1e
 import modin.pandas as pd1
