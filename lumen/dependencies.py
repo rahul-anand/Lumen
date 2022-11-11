@@ -149,11 +149,6 @@ from xgboost import XGBClassifier
 from xgboost_ray import RayDMatrix, RayParams, RayXGBClassifier, train
 from zat.log_to_dataframe import LogToDataFrame
 
-key = r"1DhbYErzDuLbwCofjivS0shRLATHbh3tUUwDjtcldFl6EbLfwdCuEksx1lGhOfOCJKDH0jHcpYzt+AStUePBWQ=="
-service = BlobServiceClient(
-    account_url="https://netsharecmu.blob.core.windows.net", credential=key
-)
-container_client = service.get_container_client("netsharecmu")
 
 zipfilename = "rahul/pcaps/cicids2017/flows/Tuesday/pcaps/C001mc4UReJDop1D6l.pcap"
 # print(zipfilename)
@@ -178,23 +173,6 @@ zipfilename = "rahul/pcaps/cicids2017/flows/Tuesday/pcaps/C001mc4UReJDop1D6l.pca
 # for ts, packet in pcap:
 #     print(ts, packet)
 
-storage_options = {
-    "account_name": "netsharecmu",
-    "account_key": "1DhbYErzDuLbwCofjivS0shRLATHbh3tUUwDjtcldFl6EbLfwdCuEksx1lGhOfOCJKDH0jHcpYzt+AStUePBWQ==",
-}
-# AzureBlobFileSystem
-# AzureDatalakeFileSystem
-abfs = AzureBlobFileSystem(
-    account_name="netsharecmu",
-    container_name="netsharecmu",
-    account_key="1DhbYErzDuLbwCofjivS0shRLATHbh3tUUwDjtcldFl6EbLfwdCuEksx1lGhOfOCJKDH0jHcpYzt+AStUePBWQ==",
-    default_fill_cache=False,
-    default_cache_type=None,
-)
-
-print(abfs)
-
-print(abfs.ls("netsharecmu/rahul/"))
 # ["netsharecmu/rahul/pcaps/cicids2017/flows/Tuesday/pcaps/C001mc4UReJDop1D6l.pcap"],
 
 
